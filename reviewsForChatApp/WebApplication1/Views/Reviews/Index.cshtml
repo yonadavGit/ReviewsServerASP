@@ -4,6 +4,29 @@
     ViewData["Title"] = "Index";
 }
 
+@functions {
+
+	public string getAvg()
+	{
+		float i = 0;
+		float sum = 0;
+		foreach (var item in Model)
+		{
+			i++;
+			sum += item.Rating;
+		}
+		if (i == 0)
+		{
+			return "0";
+		}
+		return String.Format("{0:0.0}", (sum / i));
+
+
+	}
+}
+<h1>The Avrage Rating Is: @getAvg() </h1>
+
+
 <h1>Index</h1>
 <form asp-action="Search">
     <input name="query"/>
