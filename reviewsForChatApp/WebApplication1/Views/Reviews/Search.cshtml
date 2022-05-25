@@ -1,16 +1,18 @@
 ﻿@model IEnumerable<WebApplication1.Models.Review>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Search Results";
 }
 
 <h1>Search Results</h1>
 <form asp-action="Search">
     <input name="query"/>
-    <input type="submit"/>
+    <input class="btn btn-primary" type="submit" value="Search"/>
 </form>
-<p>
     @*<a asp-action="Create">Create New</a>*@
+    <a href='@Url.Action("", "reviews")'>
+            Return to All Reviews
+        </a>
 </p>
 <table class="table">
     <thead>
@@ -51,9 +53,7 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-        <a href='@Url.Action("", "reviews")'>
-            Return to All Reviews
-        </a>
+        
         
 }
     </tbody>

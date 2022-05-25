@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebApplication1.Models.Review>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "All Reviews";
 }
 
 @functions {
@@ -24,13 +24,16 @@
 
 	}
 }
-<h1>The Avrage Rating Is: @getAvg() </h1>
 
 
-<h1>Index</h1>
+<h1>All Reviews</h1>
+
+<h3 class="success">The Average Rating Is: @getAvg() </h3>
+
+
 <form asp-action="Search">
     <input name="query"/>
-    <input type="submit" value="Search"/>
+    <input class="btn btn-primary" type="submit" value="Search"/>
 </form>
 <p>
     <a asp-action="Create">Create New</a>
