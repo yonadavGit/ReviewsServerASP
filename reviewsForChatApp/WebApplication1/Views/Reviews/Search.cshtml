@@ -10,7 +10,7 @@
     <input type="submit"/>
 </form>
 <p>
-    <a asp-action="Create">Create New</a>
+    @*<a asp-action="Create">Create New</a>*@
 </p>
 <table class="table">
     <thead>
@@ -51,6 +51,10 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
+        <a href='@Url.Action("", "reviews")'>
+            Return to All Reviews
+        </a>
+        
 }
     </tbody>
 </table>
